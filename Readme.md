@@ -1,6 +1,6 @@
 # JWT TOKEN & COOKIE PARSAR
 
-- We line create a token in login api
+- We here creating a token in login api
 - After checking the password before login we will set a token so that it will be created as soon as user login
 - In a login api in isPasswordCorrect add a
   const token = await jwt.sign({ \_id: user.\_id }, "DEV@123");
