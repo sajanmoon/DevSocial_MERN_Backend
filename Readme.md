@@ -57,5 +57,21 @@
 
 - POST /request/send/intrested/:userId
 - POST /request/send/ignored/:userId
+- [POST /request/send/:status/:userId]
 - POST /request/review/accepted/:requestId
 - POST /request/review/rejected/:requestId
+- [POST /request/review/:status/:requestId]
+
+# CONNECTION API
+
+## Sending Connection request API
+
+- creating a seprate Schema - models > connectionRequest
+- <img src="./images/connectionRequestModel.png" alt="Sample Image" width="600">
+- in a request route make a new api "/request/send/:status/:toUserId",
+- <img src="./images/requestConnectionAPI.png" alt="Sample Image" width="600">
+- in api need to validate a status type before crteating a instatnce
+- <img src="./images/validatingStatus.png" alt="Sample Image" width="600">
+- validating the dublicate connection
+- <img src="./images/existingConnectionValidate.png" alt="Sample Image" width="600">
+-

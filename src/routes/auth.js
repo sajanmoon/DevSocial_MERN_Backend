@@ -55,7 +55,7 @@ authRouter.post("/login", async (req, res) => {
         // Here we are expiring the cookies
         expires: new Date(Date.now() + 900000),
       });
-      res.send(user);
+      res.json({ message: "Login succesfull", user });
     } else {
       throw new Error(" Password is not valid");
     }

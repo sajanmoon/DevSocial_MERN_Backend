@@ -2,44 +2,51 @@ const { default: mongoose } = require("mongoose");
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcrypt");
 
-const userSchema = mongoose.Schema({
-  firstName: {
-    type: String,
-    required: true,
-  },
-  lastName: {
-    type: String,
-    required: true,
-  },
-  email: {
-    type: String,
-    required: true,
-    unique: true,
-  },
-  age: {
-    type: Number,
-  },
-  gender: {
-    type: String,
-    validate(value) {
-      if (!["male", "female"].includes(value)) {
-        throw new Error("gender not valid");
-      }
+const userSchema = mongoose.Schema(
+  {
+    firstName: {
+      type: String,
+      required: true,
+    },
+    lastName: {
+      type: String,
+      required: true,
+    },
+    email: {
+      type: String,
+      required: true,
+      unique: true,
+    },
+    age: {
+      type: Number,
+    },
+    gender: {
+      type: String,
+      emun: {
+        value: ["male", "female", "other"],
+        message: `{VALUE} is not a gender type`,
+      },
+      // validate(value) {
+      //   if (!["male", "female"].includes(value)) {
+      //     throw new Error("gender not valid");
+      //   }
+      // },
+    },
+    photoUrl: {
+      type: String,
+      default:
+        "https://thenewportbeachdentist.com/wp-content/uploads/2016/10/Michael-Williams.jpg",
+    },
+    about: {
+      type: String,
+      default: "this is bio",
+    },
+    password: {
+      type: String,
     },
   },
-  photoUrl: {
-    type: String,
-    default:
-      "https://thenewportbeachdentist.com/wp-content/uploads/2016/10/Michael-Williams.jpg",
-  },
-  about: {
-    type: String,
-    default: "this is bio",
-  },
-  password: {
-    type: String,
-  },
-});
+  { timestamps: true }
+);
 
 // Here we are setting the token for login user
 // This methd we will only write in normal function
