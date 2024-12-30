@@ -6,6 +6,7 @@ const app = express();
 const cookieParser = require("cookie-parser");
 const profileRouter = require("./routes/profile");
 const requestRouter = require("./routes/request");
+const userRouter = require("./routes/user");
 
 // To receive the JWT token we need the middleware
 app.use(cookieParser());
@@ -23,6 +24,7 @@ app.use(
 app.use("/", authRouter);
 app.use("/", profileRouter);
 app.use("/", requestRouter);
+app.use("/", userRouter);
 
 connectDB()
   .then(() => {

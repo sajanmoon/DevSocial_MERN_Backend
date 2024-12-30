@@ -6,6 +6,7 @@ const userSchema = mongoose.Schema(
   {
     firstName: {
       type: String,
+
       required: true,
     },
     lastName: {
@@ -19,9 +20,11 @@ const userSchema = mongoose.Schema(
     },
     age: {
       type: Number,
+      default: 25,
     },
     gender: {
       type: String,
+      default: "male",
       emun: {
         value: ["male", "female", "other"],
         message: `{VALUE} is not a gender type`,

@@ -5,11 +5,13 @@ const connectionRequestSchema = mongoose.Schema(
     // Sender User ID : the loggend in used id who is going to send a request
     fromUserId: {
       type: mongoose.Schema.Types.ObjectId,
+      ref: "User",
       required: true,
     },
     // Receiver User ID : to whom logged in used sending the connection request
     toUserId: {
       type: mongoose.Schema.Types.ObjectId,
+      ref: "User",
       required: true,
     },
     //   the status of a connection request either be intrested or ignore
