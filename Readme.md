@@ -74,4 +74,5 @@
 - <img src="./images/validatingStatus.png" alt="Sample Image" width="600">
 - validating the dublicate connection
 - <img src="./images/existingConnectionValidate.png" alt="Sample Image" width="600">
--
+
+# FEED API

@@ -51,14 +51,4 @@ profileRouter.get("/user", async (req, res) => {
   }
 });
 
-// FEED API
-profileRouter.get("/feed", async (req, res) => {
-  try {
-    const user = await User.find({});
-    res.send(user);
-  } catch (error) {
-    res.status(400).send("signup failed" + error);
-  }
-});
-
 module.exports = profileRouter;
