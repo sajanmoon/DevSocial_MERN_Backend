@@ -23,8 +23,15 @@ authRouter.post("/signup", async (req, res) => {
       photoUrl,
       password: hashPassword,
     });
-    await user.save();
-    res.send("user saved succesfully");
+    const savedUser = await user.save();
+    const token = await savedUser.getJWT();
+    console.log(token);
+
+    res.cookie("token", token, {
+      // Here we are expiring the cookies
+      expires: new Date(Date.now() + 900000),
+    });
+    res.json({ message: "user signup succesfull", data: savedUser });
   } catch (error) {
     res.status(400).send("signup failed" + error);
   }

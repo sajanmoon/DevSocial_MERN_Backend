@@ -1,8 +1,11 @@
 const mongoose = require("mongoose");
-
+require("dotenv").config();
 const connectDB = async () => {
-  await mongoose.connect("mongodb://localhost:27017/devtinderpractice3");
+  try {
+    await mongoose.connect(process.env.MONGODB_URL);
+  } catch (error) {
+    console.error(error.message);
+  }
 };
 
 module.exports = connectDB;
-
