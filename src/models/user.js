@@ -1,6 +1,7 @@
 const { default: mongoose } = require("mongoose");
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcrypt");
+require("dotenv").config();
 
 const userSchema = mongoose.Schema(
   {
@@ -55,7 +56,7 @@ const userSchema = mongoose.Schema(
 // This methd we will only write in normal function
 userSchema.methods.getJWT = async function () {
   const user = this;
-  const token = await jwt.sign({ _id: user._id }, "DEV@123", {
+  const token = await jwt.sign({ _id: user._id }, process.env.SECRET_KEY_JWT, {
     // Here we are expiring a jwt token in 7 days by passing a parameteer
     expiresIn: "7d",
   });

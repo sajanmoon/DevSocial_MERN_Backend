@@ -1,6 +1,6 @@
 const jwt = require("jsonwebtoken");
 const User = require("../models/user");
-
+require("dotenv").config();
 const userAuth = async (req, res, next) => {
   try {
     const cookies = req.cookies;
@@ -11,7 +11,7 @@ const userAuth = async (req, res, next) => {
       return res.status(401).send("Please login");
     }
     //  Here we will verify the token
-    const decodedObj = await jwt.verify(token, "DEV@123");
+    const decodedObj = await jwt.verify(token, process.env.SECRET_KEY_JWT);
 
     //   Now there will be seprate token for indiviusual profile
     // so to get particular user we will extract the _id from decodedObj

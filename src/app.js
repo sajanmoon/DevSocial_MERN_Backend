@@ -7,7 +7,7 @@ const cookieParser = require("cookie-parser");
 const profileRouter = require("./routes/profile");
 const requestRouter = require("./routes/request");
 const userRouter = require("./routes/user");
-
+require("dotenv").config();
 // To receive the JWT token we need the middleware
 app.use(cookieParser());
 
@@ -16,7 +16,7 @@ app.use(express.json());
 
 app.use(
   cors({
-    origin: "http://localhost:5173",
+    origin: "https://devtinder-ens8vwpmz-sajanmoons-projects.vercel.app/",
     credentials: true,
   })
 );
@@ -29,7 +29,7 @@ app.use("/", userRouter);
 connectDB()
   .then(() => {
     console.log("Database connected succesfully");
-    app.listen(3000, () => {
+    app.listen(process.env.PORT, () => {
       console.log("server started succesfully");
     });
   })
