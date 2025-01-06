@@ -16,7 +16,7 @@ app.use(express.json());
 
 app.use(
   cors({
-    origin: "https://devtinder-ens8vwpmz-sajanmoons-projects.vercel.app/",
+    origin: "hhttp://localhost:5173/",
     credentials: true,
   })
 );
@@ -25,7 +25,7 @@ app.use("/", authRouter);
 app.use("/", profileRouter);
 app.use("/", requestRouter);
 app.use("/", userRouter);
-
+app.use("/", (req, res) => res.send("Works"));
 connectDB()
   .then(() => {
     console.log("Database connected succesfully");
