@@ -16,8 +16,8 @@ app.use(express.json());
 
 app.use(
   cors({
-    origin: "https://devtinder-xi.vercel.app/",
-    credentials: true,  
+    origin: "https://devtinder-xi.vercel.app",
+    credentials: true,
   })
 );
 
