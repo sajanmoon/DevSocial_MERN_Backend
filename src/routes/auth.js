@@ -13,7 +13,7 @@ authRouter.post("/signup", async (req, res) => {
     validateSignUpData(req);
     // new instance of User model
     const { firstName, lastName, email, password, photoUrl } = req.body;
-    const hashPassword = await bcrypt.hash(password, 10); 
+    const hashPassword = await bcrypt.hash(password, 10);
 
     const user = new User({
       firstName,
@@ -23,10 +23,13 @@ authRouter.post("/signup", async (req, res) => {
       password: hashPassword,
     });
     const savedUser = await user.save();
-    const token = await savedUser.getJWT(); 
+    const token = await savedUser.getJWT();
 
     res.cookie("token", token, {
       // Here we are expiring the cookies
+      httpOnly: true,
+      secure: true,
+      sameSite: "none",
       expires: new Date(Date.now() + 900000),
     });
     res.json({ message: "user signup succesfull", data: savedUser });
@@ -54,10 +57,13 @@ authRouter.post("/login", async (req, res) => {
       // Creating a JWT token
 
       // getJWT is been imported from USER model
-      const token = await user.getJWT(); 
+      const token = await user.getJWT();
 
       res.cookie("token", token, {
         // Here we are expiring the cookies
+        httpOnly: true,
+        secure: true, // Required for HTTPS
+        sameSite: "none",
         expires: new Date(Date.now() + 900000),
       });
       res.json({ message: "Login succesfull", user });
@@ -71,6 +77,9 @@ authRouter.post("/login", async (req, res) => {
 
 authRouter.post("/logout", async (req, res) => {
   res.cookie("token", null, {
+    httpOnly: true,
+    secure: true,
+    sameSite: "none",
     expires: new Date(Date.now()),
   });
   res.send("logout succesful");
