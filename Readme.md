@@ -23,7 +23,7 @@
 
 # MongoDB
 
-- Create a config folder > database.js
+- Create a folder - src > config > database.js
 - Install mongoose
 - in database.js > import mongoose > create async connectDB function > paste dabaseURL mongoDB shell
 - <img src="./images/mongoDBdatabase.png" alt="Logo" width="600">
