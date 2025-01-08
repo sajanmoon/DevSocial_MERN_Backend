@@ -74,6 +74,29 @@
 
 # Writing API
 
+# API's TO BUILD
+
+## authRouter
+
+- POST /signup
+- POST /login
+- POST /logout
+
+## profileRouter
+
+- GET /profile/view
+- PATCH /profile/edit
+- PATCH /profile/password
+
+## Connection request router
+
+- POST /request/send/intrested/:userId
+- POST /request/send/ignored/:userId
+- [POST /request/send/:status/:userId]
+- POST /request/review/accepted/:requestId
+- POST /request/review/rejected/:requestId
+- [POST /request/review/:status/:requestId]
+
 # SETUP
 
 - Create routes folder > user.js file
@@ -212,28 +235,7 @@
 - after shifting we have to make certain changes in our login API
 - <img src="./images/loginAPIAfterExportingToSchema.png" alt="Sample Image" width="600">
 
-# API's TO BUILD
 
-## authRouter
-
-- POST /signup
-- POST /login
-- POST /logout
-
-## profileRouter
-
-- GET /profile/view
-- PATCH /profile/edit
-- PATCH /profile/password
-
-## Connection request router
-
-- POST /request/send/intrested/:userId
-- POST /request/send/ignored/:userId
-- [POST /request/send/:status/:userId]
-- POST /request/review/accepted/:requestId
-- POST /request/review/rejected/:requestId
-- [POST /request/review/:status/:requestId]
 
 # CONNECTION API
 
