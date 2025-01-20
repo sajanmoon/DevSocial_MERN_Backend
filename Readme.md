@@ -235,8 +235,6 @@
 - after shifting we have to make certain changes in our login API
 - <img src="./images/loginAPIAfterExportingToSchema.png" alt="Sample Image" width="600">
 
-
-
 # CONNECTION API
 
 ## Sending Connection request API

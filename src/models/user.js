@@ -39,11 +39,11 @@ const userSchema = mongoose.Schema(
     photoUrl: {
       type: String,
       default:
-        "https://thenewportbeachdentist.com/wp-content/uploads/2016/10/Michael-Williams.jpg",
+        "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_640.png",
     },
     about: {
       type: String,
-      default: "this is bio",
+      default: "I am a Software Devloper ...",
     },
     password: {
       type: String,
