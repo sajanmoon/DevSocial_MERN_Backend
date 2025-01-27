@@ -248,4 +248,19 @@
 - validating the dublicate connection
 - <img src="./images/existingConnectionValidate.png" alt="Sample Image" width="600">
 
-# FEED API
+# CHAT FEATURE
+
+## SOCKET.IO
+
+- in frontend
+- create a chat component
+- create a route "/chat/:targetUser
+- in connection component add a LINK to button
+- in backend
+- Install socket.io
+- in app.js add this things
+- <img src="./images/socket.png" alt="Sample Image" width="600">
+- create a socket file in utils
+- add the code from image
+- <img src="./images/socketinitalize.png.png" alt="Sample Image" width="600">
+- this is a backend configuaration now move to a frontend part
