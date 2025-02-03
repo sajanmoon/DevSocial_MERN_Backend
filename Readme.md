@@ -264,3 +264,5 @@
 - add the code from image
 - <img src="./images/socketinitalize.png" alt="Sample Image" width="600">
 - this is a backend configuaration now move to a frontend part
+- <img src="./images/joinchat.png" alt="Sample Image" width="600">
+-
