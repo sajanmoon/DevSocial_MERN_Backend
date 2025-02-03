@@ -262,5 +262,5 @@
 - <img src="./images/socket.png" alt="Sample Image" width="600">
 - create a socket file in utils
 - add the code from image
-- <img src="./images/socketinitalize.png.png" alt="Sample Image" width="600">
+- <img src="./images/socketinitalize.png" alt="Sample Image" width="600">
 - this is a backend configuaration now move to a frontend part
