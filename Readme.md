@@ -265,4 +265,18 @@
 - <img src="./images/socketinitalize.png" alt="Sample Image" width="600">
 - this is a backend configuaration now move to a frontend part
 - <img src="./images/joinchat.png" alt="Sample Image" width="600">
--
+- here we have completed making sender and receiver in a room
+- now we have to send a message
+- <img src="./images/sendmessage.png" alt="Sample Image" width="600">
+- in sendmessage add a io.to(roomId).emit("messageReceived", { firstName, text });
+- and now set sendmessage in frontend
+
+## Storing data in database
+
+- create chat schema
+- <img src="./images/chatSchema.png" alt="Sample Image" width="600">
+- inside chat schema create one more schema for chat i.e. chatSchema
+- <img src="./images/messageSchema.png" alt="Sample Image" width="600">
+- after creating a schema we need to save msg in datbase
+- in socket.js in sendmessage section
+- <img src="./images/msgsavesocket.png" alt="Sample Image" width="600">

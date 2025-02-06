@@ -2,13 +2,13 @@ const { default: mongoose } = require("mongoose");
 
 const connectionRequestSchema = mongoose.Schema(
   {
-    // Sender User ID : the loggend in used id who is going to send a request
+    // Sender User ID : the loggend in user id who is going to send a request
     fromUserId: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "User",
       required: true,
     },
-    // Receiver User ID : to whom logged in used sending the connection request
+    // Receiver User ID : to whom logged in user sending the connection request
     toUserId: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "User",
