@@ -28,7 +28,7 @@ const initalizeSocket = (server) => {
 
     socket.on(
       "sendMessage",
-      async ({ firstName, userId, targetUserId, text }) => {
+      async ({ firstName, lastName, userId, targetUserId, text }) => {
         // save message to the database
         // Here we will have to situation
         // 1st if the chat already exist
@@ -55,7 +55,7 @@ const initalizeSocket = (server) => {
 
           await chat.save();
 
-          io.to(roomId).emit("messageReceived", { firstName, text });
+          io.to(roomId).emit("messageReceived", { firstName, lastName, text });
         } catch (error) {
           console.error(error);
         }

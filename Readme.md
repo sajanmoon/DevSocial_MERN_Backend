@@ -280,3 +280,6 @@
 - after creating a schema we need to save msg in datbase
 - in socket.js in sendmessage section
 - <img src="./images/msgsavesocket.png" alt="Sample Image" width="600">
+- we will create a different route for chat
+- <img src="./images/chatRoute.png" alt="Sample Image" width="600">
+- add route in app.js
