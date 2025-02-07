@@ -283,3 +283,4 @@
 - we will create a different route for chat
 - <img src="./images/chatRoute.png" alt="Sample Image" width="600">
 - add route in app.js
+- go in a frontend
